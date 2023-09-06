@@ -1,0 +1,51 @@
+﻿  In file included from Source.cpp:8:
+./BMPFileRW.h(87,6): : warning : unused variable 'size' [-Wunused-variable]
+          int size = ksize * ksize;
+              ^
+./BMPFileRW.h(119,6): : warning : unused variable 'size' [-Wunused-variable]
+          int size = ksize * ksize;
+              ^
+./BMPFileRW.h(171,13): : warning : unused variable 'LinF_Valueg' [-Wunused-variable]
+                                          double LinF_Valueg = 0.0;
+                                                 ^
+./BMPFileRW.h(172,13): : warning : unused variable 'LinF_Valueb' [-Wunused-variable]
+                                          double LinF_Valueb = 0.0;
+                                                 ^
+./BMPFileRW.h(158,6): : warning : unused variable 'size' [-Wunused-variable]
+          int size = ksize * ksize;
+              ^
+./BMPFileRW.h(221,3): : warning : field 'MinValue' will be initialized after field 'MaxValue' [-Wreorder-ctor]
+                  MinValue(DBL_MAX),
+                  ^~~~~~~~~~~~~~~~~
+                  MaxValue(-DBL_MAX)
+  Source.cpp(474,18): note: in instantiation of member function 'MaxCalc<double>::MaxCalc' requested here
+          MaxCalc<double> MMC(R);
+                          ^
+  In file included from Source.cpp:8:
+./BMPFileRW.h(213,21): : warning : field 'MinValue' will be initialized after field 'MaxValue' [-Wreorder-ctor]
+                  ArrayA(x.ArrayA), MinValue(DBL_MAX), MaxValue(-DBL_MAX) {}
+                                    ^~~~~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~
+                                    MaxValue(-DBL_MAX) MinValue(DBL_MAX)
+  C:\Program Files (x86)\Intel\oneAPI\tbb\2021.4.0\include\oneapi/tbb/parallel_reduce.h(206,67): note: in instantiation of member function 'MaxCalc<double>::MaxCalc' requested here
+          my_body = (Body*) new( parent_ptr->zombie_space.begin() ) Body(*my_body, split());
+                                                                    ^
+  C:\Program Files (x86)\Intel\oneAPI\tbb\2021.4.0\include\oneapi/tbb/parallel_reduce.h(104,5): note: in instantiation of member function 'tbb::detail::d1::start_reduce<tbb::detail::d1::blocked_range2d<unsigned long long>, MaxCalc<double>, const tbb::detail::d1::auto_partitioner>::execute' requested here
+      start_reduce( const Range& range, Body& body, Partitioner& partitioner, small_object_allocator& alloc ) :
+      ^
+  C:\Program Files (x86)\Intel\oneAPI\tbb\2021.4.0\include\oneapi/tbb/detail/_small_object_pool.h(63,57): note: in instantiation of member function 'tbb::detail::d1::start_reduce<tbb::detail::d1::blocked_range2d<unsigned long long>, MaxCalc<double>, const tbb::detail::d1::auto_partitioner>::start_reduce' requested here
+          auto constructed_object = new(allocated_object) Type(std::forward<Args>(args)...);
+                                                          ^
+  C:\Program Files (x86)\Intel\oneAPI\tbb\2021.4.0\include\oneapi/tbb/parallel_reduce.h(137,38): note: in instantiation of function template specialization 'tbb::detail::d1::small_object_allocator::new_object<tbb::detail::d1::start_reduce<tbb::detail::d1::blocked_range2d<unsigned long long>, MaxCalc<double>, const tbb::detail::d1::auto_partitioner>, const tbb::detail::d1::blocked_range2d<unsigned long long> &, MaxCalc<double> &, const tbb::detail::d1::auto_partitioner &, tbb::detail::d1::small_object_allocator &>' requested here
+              auto reduce_task = alloc.new_object<start_reduce>(range, body, partitioner, alloc);
+                                       ^
+  C:\Program Files (x86)\Intel\oneAPI\tbb\2021.4.0\include\oneapi/tbb/parallel_reduce.h(146,9): note: in instantiation of member function 'tbb::detail::d1::start_reduce<tbb::detail::d1::blocked_range2d<unsigned long long>, MaxCalc<double>, const tbb::detail::d1::auto_partitioner>::run' requested here
+          run(range, body, partitioner, context);
+          ^
+  C:\Program Files (x86)\Intel\oneAPI\tbb\2021.4.0\include\oneapi/tbb/parallel_reduce.h(423,64): note: in instantiation of member function 'tbb::detail::d1::start_reduce<tbb::detail::d1::blocked_range2d<unsigned long long>, MaxCalc<double>, const tbb::detail::d1::auto_partitioner>::run' requested here
+      start_reduce<Range,Body, const __TBB_DEFAULT_PARTITIONER>::run( range, body, __TBB_DEFAULT_PARTITIONER() );
+                                                                 ^
+  Source.cpp(475,7): note: in instantiation of function template specialization 'tbb::detail::d1::parallel_reduce<tbb::detail::d1::blocked_range2d<unsigned long long>, MaxCalc<double>>' requested here
+          tbb::parallel_reduce(tbb::blocked_range2d<size_t>(0, height, 0, width), MMC);
+               ^
+  7 warnings generated.
+  6.vcxproj -> C:\Users\HP\Documents\Visual Studio 2019\Projects\Параллельные вычисления\6\x64\Release\6.exe
